@@ -5,19 +5,26 @@
 {% block title %}
   Новый пост
 {% endblock %}
+
+{% block page_title %}
+  {% if form.is_valid %}
+    Новый пост успешно создан
+  {% else %}
+    {% if '/edit/' in request.path %}
+      Редактировать пост
+    {% else %}
+      Создать пост
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 {% with data=form.instance %}
   {% if form.is_valid %}
   <div class="mb-3">
-    <h2 class="py-3">Новый пост успешно создан</h2>
     <small>Дата и время создания: {{ data.pub_date }}</small>
   </div>
   {% else %}
-    {% if '/edit/' in request.path %}
-    <h1 class="py-3">Редактировать пост</h1>
-    {% else %}
-    <h1 class="py-3">Создать пост</h1>
-    {% endif %}
     <div class="mb-3">
       <div class="col-6">
         <div class="card-body">

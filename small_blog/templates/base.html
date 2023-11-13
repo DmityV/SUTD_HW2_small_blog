@@ -15,8 +15,12 @@
     {% include "includes/header.html" %}
     <main>
       <div class="container pt-3">
-      {% block content %}
-      {% endblock %}
+        <h1 class="py-3">
+          {% block page_title %}
+          {% endblock %}
+        </h1>
+        {% block content %}
+        {% endblock %}
       </div>
     </main>
     {% include "includes/footer.html" %}
