@@ -1,0 +1,26 @@
+<header>
+  <nav class="navbar border-bottom">
+    <div class="container">
+      {% with request.resolver_match.view_name as view_name %}
+        <ul class="nav nav-pills">
+          <li class="nav-item" style="width: 10rem; text-align: center;">
+            <a class="nav-link {% if view_name == 'blog:list' %} active {% endif %}"
+              href="{% url 'blog:list' %}">
+              Список постов
+            </a>
+          </li>
+          <li class="nav-item" style="width: 10rem; text-align: center;">
+            <a class="nav-link {% if view_name == 'about:about_page' %} active {% endif %}"
+              href="{% url 'about:about_page' %}">
+              О Блоге
+            </a>
+          </li>
+        </ul>
+      
+      {% if view_name != 'blog:create' %}
+        <a type="button" class="btn btn-success" style="width: 10rem; text-align: center;" href="{% url 'blog:create' %}" role="button">Создать пост</a>
+      {% endif %}
+      {% endwith %}
+    </div>
+  </nav>
+</header>

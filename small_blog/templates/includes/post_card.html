@@ -1,0 +1,14 @@
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h4 class="card-title">{{ post.title }}</h4>
+    <h6 class="text-muted">
+      <p><small>{{ post.pub_date }}<br>
+      В категории: {{ post.category }}</small></p>
+    </h6>
+    <p class="card-text">{{ post.text|linebreaksbr|truncatewords:10 }}</p>
+    <p class="mb-0"><a href="{% url 'blog:detail' post.id %}" class="card-link">Читать полный текст</a><br>
+    <a href="{% url 'blog:edit' post.id %}">Изменить пост</a>
+    |
+    <a href="{% url 'blog:delete' post.id %}">Удалить пост</a></p>
+  </div>
+</div>

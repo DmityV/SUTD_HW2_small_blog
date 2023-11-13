@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ post.title }}
+{% endblock %}
+{% block content %}
+  <article>
+    <small class="text-muted">
+      <p>{{ post.pub_date }}<br>
+      В категории: {{ post.category }}</p>
+    </small>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.text|linebreaksbr }}</p>
+    <p><a href="{% url 'blog:edit' post.id %}">Изменить пост</a>
+    |
+    <a href="{% url 'blog:delete' post.id %}">Удалить пост</a></p>
+  </article> 
+{% endblock %}
