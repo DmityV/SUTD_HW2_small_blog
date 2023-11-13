@@ -5,7 +5,7 @@
 
 ### Как запустить проект:
 
-Клонировать репозиторий и перейти в него в командной строке:
+Клонировать репозиторий и перейти в него, выполнив следующие команды в командной строке:
 
 ```
 git clone https://github.com/DmityV/SUTD_HW3_small_blog.git
@@ -15,7 +15,9 @@ git clone https://github.com/DmityV/SUTD_HW3_small_blog.git
 cd small_blog
 ```
 
-Cоздать и активировать виртуальное окружение:
+Далее в командной строке:
+
+создать и активировать виртуальное окружение:
 
 Windows
 ```
@@ -28,7 +30,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-Обновить PIP
+обновить PIP
 
 Windows
 ```
@@ -39,13 +41,13 @@ Linux/macOS
 python3 -m pip install --upgrade pip
 ```
 
-Установить зависимости из файла requirements.txt:
+установить зависимости из файла requirements.txt:
 
 ```
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
+выполнить миграции:
 
 Windows
 ```
@@ -59,7 +61,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-Запустить проект:
+запустить проект:
 
 Windows
 ```
