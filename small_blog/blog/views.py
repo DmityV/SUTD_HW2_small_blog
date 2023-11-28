@@ -25,7 +25,7 @@ def post(request, pk=None):
 class PostListView(ListView):
     model = Post
     ordering = '-pub_date'
-    paginate_by = 50
+    paginate_by = 5
 
 
 class PostDetailView(DetailView):

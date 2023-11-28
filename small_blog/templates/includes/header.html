@@ -15,6 +15,12 @@
               О Блоге
             </a>
           </li>
+          <li class="nav-item" style="width: 10rem; text-align: center;">
+            <a class="nav-link {% if view_name == 'feedback:feedbacks' %} active {% endif %}"
+              href="{% url 'feedback:add_feedback' %}">
+              Оставить отзыв
+            </a>
+          </li>
         </ul>
       
       {% if view_name != 'blog:create' %}

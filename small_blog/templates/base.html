@@ -4,8 +4,7 @@
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      {% block title %}
-      {% endblock %}
+      {% block title %}{% endblock %}
     </title>
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
@@ -15,12 +14,10 @@
     {% include "includes/header.html" %}
     <main>
       <div class="container pt-3">
-        <h1 class="py-3">
-          {% block page_title %}
-          {% endblock %}
+        <h1 class="py-3 d-flex justify-content-center">
+          {% block page_title %}{% endblock %}
         </h1>
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
       </div>
     </main>
     {% include "includes/footer.html" %}
