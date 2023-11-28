@@ -9,7 +9,7 @@
 #### Клонировать репозиторий и перейти в него, выполнив следующие команды в командной строке:
 
 ```
-git clone https://github.com/DmityV/SUTD_HW3_small_blog.git
+git clone https://github.com/DmityV/SUTD_small_blog.git
 ```
 
 ```
