@@ -23,24 +23,26 @@
         <h6 class='mb-0 text-muted d-flex justify-content-center'>после одобрения администратором</h6>
       {% else %}
         <br>
-        <div class='mb-3 d-flex justify-content-center'><h4>Оставьте свой отзыв здесь:</h4></div>  
-        <form method="post" action="{% url 'feedback:add_feedback' %}">
-          {% csrf_token %}
-          {% bootstrap_form form %}
-          {% bootstrap_button button_type="submit" style="width: 8rem;" content="Отправить" %}
-        </form>
+        <div class="mb-3">
+          <div class='mb-3 d-flex justify-content-center'><h4>Оставьте свой отзыв здесь:</h4></div>  
+          <form method="post" action="{% url 'feedback:add_feedback' %}">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% bootstrap_button button_type="submit" style="width: 8rem;" content="Отправить" %}
+          </form>
+        </div>
       {% endif %}
     </div>
     <div class="col">
       <br>
       <div class='mb-3 d-flex justify-content-center'><h4>Ранее размещенные отзывы:</h4></div>  
-    {% for item in page_obj %}
-      {% include "includes/feedback_card.html" %}
-      {% if not forloop.last %}
-        <hr>
-      {% endif %}
-    {% endfor %}
-    {% include "includes/paginator.html" %}
+      {% for item in page_obj %}
+        {% include "includes/feedback_card.html" %}
+        {% if not forloop.last %}
+          <hr>
+        {% endif %}
+      {% endfor %}
+      {% include "includes/paginator.html" %}
     </div>
   </div>
 </div>
